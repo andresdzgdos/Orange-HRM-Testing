@@ -1,0 +1,48 @@
+ID,Req. ID,Priority,Module,Sub-module,Summary,Precondition,Test description,Expected results,Deliverable,Notes,Status
+14,QT-2,High,Employee Management,Add employee flow,"Add employee with mandatory fields only (Valid data, no Login Details, no profile picture)","User is logged in, has ""Add Employee"" permission and in the PIM module page","1. Click the add button
+2. Fill all mandatory fields with valid data
+3. Click Save button","- Employee record is created succesfully and visible in the employee list
+- User is prompted to employee Personal Details page",14.jpg,UI changed color pallete after adding new user,Completed
+15,QT-2,High,Employee Management,Add employee flow,Add employee with missing mandatory fields,"User is logged in, has ""Add Employee"" permission and in the PIM module page","1. Click the add button
+2. Leave name field empty
+3. Click Save button","- Validation message appears under ""First Name"" and ""Last Name"" fields
+- No employee is created with prompted Employee Id",15.jpg,,Completed
+16,QT-2,High,Employee Management,Add employee flow,Add employee with already existent Employee ID,"User is logged in, has ""Add Employee"" permission and in the PIM module page","1. Click the add button
+2. Fill all mandatory fields with valid data
+3. Change newly created Employee Id with already existent Id
+3. Click Save button","- Validation message appears under Employee Id
+- User is unable to add new employee",16.jpg,,Completed
+17,QT-2,High,Employee Management,Add employee flow,"Add employee with valid data, login Details and profile picture","User is logged in, has ""Add Employee"" permission and in the PIM module page","1. Click the add button
+2. Fill all mandatory fields with valid data
+3. Create Login Details with valid data
+3. Click Save button","- Employee record is created succesfully and visible in the employee list
+- User is prompted to employee Personal Details page
+- User is able to login using newly created credentials",17.2.jpg,,Completed
+18,QT-2,High,Employee Management,Add employee flow,Add employee with valid data and invalid login Details,"User is logged in, has ""Add Employee"" permission and in the PIM module page","1. Click the add button
+2. Fill all mandatory fields with valid data
+3. Create Login Details with invalid data (invalid password and username)
+3. Click Save button","- Employee record is not created
+- Validation message appears under specified field prompting requirements for correct data input",18.jpg,,Completed
+19,QT-2,Low,Employee Management,Add employee flow,Cancel adding employee,"User is logged in, has ""Add Employee"" permission and in the PIM module page","1. Click the add button
+2. Fill all mandatory fields with valid data
+3. Click Cancel button","- Employee record is not created 
+- User is prompted to PIM page",19.jpg,,Completed
+20,QT-2,Medium,Employee Management,Edit/Delete employee ,Edit employee details with valid data,"User is logged, has editing permissions and in the PIM screen. Employee record exists ","1. Open existing employee profile
+2. Edit any personal details field (Nationality, Date of Birth, etc)
+3. Click Save
+",Changes in employee information are saved and show after refreshing employe page,20.jpg,,Completed
+21,QT-2,Medium,Employee Management,Edit/Delete employee ,Edit employee details with invalid data,"User is logged, has editing permissions and in the PIM screen. Employee record exists ","1. Open existing employee profile
+2. Edit any personal details field with invalid data (eg. wrong date of Birth format, etc)
+3. Click Save
+","- Validation message appears under invalid input
+- Changes in employee record are not saved
+",21.jpg,,Completed
+22,QT-2,Low,Employee Management,Edit/Delete employee ,Change profile picture,"User is logged, has editing permissions and in the PIM screen. Employee record exists ","1. Open existing employee profile
+2. Click profile picture and change picture when promtped
+3. Click Save
+",Changes in profile picture are saved ,22.jpg,,Completed
+23,QT-2,High,Employee Management,Edit/Delete employee ,Delete employee profile,"User is logged in, has employee deletion permission and in the PIM module page","1. Click Delete button on an employee profile
+2. Confirm deletion when prompted","- Employee is deleted
+- Previously accessed employee page information is no longer accesible",23.3.jpg,,Completed
+24,QT-2,Medium,Employee Management,Edit/Delete employee ,Abort employee profile deletion,"User is logged in, has employee deletion permission and in the PIM module page","1. Click Delete button on an employee profile
+2. Abort deletion when prompted",Employee profile deletion is aborted and no changes are made to his profile,24.2.jpg,,Completed
