@@ -1,35 +1,35 @@
 ID,Req. ID,Priority,Module,Sub-module,Summary,Precondition,Test description,Expected results,Deliverable,Notes,Status
-25,QT-3,High,Leave Management,Apply for leave,Apply for Leave with valid dates,Employee has Leave balance and in Apply Leave page,"1. Select Leave type
+25,QT-3,High,Leave Management,QT-3.1 Apply for leave,Apply for Leave with valid dates,Employee has Leave balance and in Apply Leave page,"1. Select Leave type
 2. Select valid range of dates
 3. Leave Comments blank
 4. Click Apply",Application is submitted and appears in Leave request module for users with appropiate permissions,25.2.jpg,,Completed
-26,QT-3,High,Leave Management,Apply for leave,Apply for Leave with insufficient Leave balance,Employee has Leave balance and in Apply Leave page,"1. Select Leave type
+26,QT-3,High,Leave Management,QT-3.1 ,Apply for Leave with insufficient Leave balance,Employee has Leave balance and in Apply Leave page,"1. Select Leave type
 2. Select range of dates that exceed Leave balance
 3. Leave Comments blank
 4. Click Apply","- Validation message appears ""Balance not sufficient"" 
 - Application is not submitted",26.jpg,,Completed
-27,QT-3,Medium,Leave Management,Apply for leave,Apply or Leave in past days,Employee has Leave balance and in Apply Leave page,"1. Select Leave type
+27,QT-3,Medium,Leave Management,QT-3.1 ,Apply or Leave in past days,Employee has Leave balance and in Apply Leave page,"1. Select Leave type
 2. Select range of start and end dates that have already passed
 3. Leave Comments blank
 4. Click Apply","- Validation message prompts user to select valid dates
 - Application is not submitted",27.jpg,"Request was submitted. See Hans Moleman with application dates 10/06/25 to 11/03/25.
 Could be a feature (?)",Completed
-28,QT-3,Medium,Leave Management,Apply for leave,Apply for Leave with overlapping dates,"Employee has Leave balance and in Apply Leave page
+28,QT-3,Medium,Leave Management,QT-3.1 ,Apply for Leave with overlapping dates,"Employee has Leave balance and in Apply Leave page
 Employee already has a pending Leave request","1. Select Leave type
 2. Select range of dates that overlap with a previously submitted and pending Leave request
 3. Click Apply","- Validation message ""Overlapping Leave requests found""
 - Records of overlapping dates are shown to user",28.jpg,,Completed
-29,QT-3,High,Leave Management,Apply for leave,Cancel Leave application,Employee has an already existing Leave application and in My Leave page,"1. Select Leave request
+29,QT-3,High,Leave Management,QT-3.1 ,Cancel Leave application,Employee has an already existing Leave application and in My Leave page,"1. Select Leave request
 2. Cancel Leave application",Leave application is canceled,29.2.jpg,,Completed
-30,QT-3,Medium,Leave Management,Apply for leave,Balance refunded after Canceled approved and scheduled Leave ,Employee has an already approved Leave application and in My Leave page,"1. Select Leave request
+30,QT-3,Medium,Leave Management,QT-3.1 ,Balance refunded after Canceled approved and scheduled Leave ,Employee has an already approved Leave application and in My Leave page,"1. Select Leave request
 2. Cancel scheduled Leave",Scheduled leave application is canceled and days refunded,30.2.jpg,,Completed
-31,QT-3,High,Leave Management,Approve leave,Approve a Leave request,User has required Leave approval permissions and is in Leave module ,"1. Select Leave request
+31,QT-3,High,Leave Management,QT-3.2 Approve leave,Approve a Leave request,User has required Leave approval permissions and is in Leave module ,"1. Select Leave request
 2. Approve leave request",Leave application is approved and appears on Leave Schedule,31.jpg,,Completed
-32,QT-3,High,Leave Management,Approve leave,Reject a Leave request,User has required Leave approval permissions and is in Leave module ,"1. Select Leave request
+32,QT-3,High,Leave Management,QT-3.2 ,Reject a Leave request,User has required Leave approval permissions and is in Leave module ,"1. Select Leave request
 2. Reject leave request",Leave application is rejected and disappears from Leave requests,32.jpg,,Completed
-33,QT-3,Medium,Leave Management,Leave List and Filters,Search Leave by employee,User has required Leave approval permissions and is in Leave module ,"1. Select Leave list
+33,QT-3,Medium,Leave Management,QT-3.3 Approve leaveLeave List and Filters,Search Leave by employee,User has required Leave approval permissions and is in Leave module ,"1. Select Leave list
 2. Write employee name in field
 3. Click search",All Leave records of employee are shown ,33.jpg,Show Leave status is a required field therefore only filtered results for that employee can be shown instead of all Leave history. Could be a feature (?),Completed
-34,QT-3,Medium,Leave Management,Leave List and Filters,Filter leave by status,User has required Leave approval permissions and is in Leave module ,"1. Select Leave list
+34,QT-3,Medium,Leave Management,QT-3.3,Filter leave by status,User has required Leave approval permissions and is in Leave module ,"1. Select Leave list
 2. Filter list by a status
 3. Click search",Leave records within the specified criteria are shown,34.jpg,,Completed

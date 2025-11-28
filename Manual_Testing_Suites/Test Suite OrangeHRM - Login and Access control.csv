@@ -1,0 +1,64 @@
+ID,Req. ID,Priority,Module,Sub-module,Summary,Precondition,Test description,Expected results,Deliverable,Notes,Status
+1,QT-1,High,Login and access control,QT-1.1 Test valid login,Login with valid credentials,User account exists and is active,"1. Navigate the login page
+2. Enter valid username
+3. Enter valid password
+4. Click Login button",User is able to login to his account,1.jpg,,Completed
+2,QT-1,High,Login and access control,QT-1.1,Login with valid username and incorrect password,User account exists and is active,"1. Navigate the login page
+2. Enter valid username
+3. Enter invalid password
+4. Click Login button","- User is unable to login to his account
+- User is prompted with ""Invalid credentials"" message",2.jpg,,Completed
+3,QT-1,Medium,Login and access control,QT-1.1,Login with unregistered username,User account information does not exist within the database,"1. Navigate the login page
+2. Enter non existent username
+3. Enter any password
+4. Click Login button","- User is unable to login
+- User is prompted with ""Invalid credentials"" message",3.jpg,,Completed
+4,QT-1,Medium,Login and access control,QT-1.1,Case sensitivity check for username,"1. User account exists and is active
+2. Confirm system requirements for case sensitivity","1. Navigate the login page
+2. Enter valid username in different casing (UserName vs username)
+3. Enter valid password
+4. Click Login button",User is able to login to his account,4.jpg,,Completed
+5,QT-1,High,Login and access control,QT-1.1,Case sensitivity check for password,"User account exists and is active
+","1. Navigate the login page
+2. Enter valid username 
+3. Enter password in different casing (mydarling vs MydarlinG)
+4. Click Login button","- User is unable to login to his account
+- User is prompted with ""Invalid credentials"" message",5.jpg,,Completed
+6,QT-1,Low,Login and access control,QT-1.1,Login using Enter key,"User account exists and is active
+","1. Navigate the login page
+2. Enter valid username
+3. Enter valid password
+4. Press Enter key on keyboard",User is able to login to his account,6.jpg,,Completed
+7,QT-1,High,Login and access control,QT-1.2 Test invalid login,Empty username field,,"1. Navigate the login page
+2. Leave username field blank
+3. Enter valid password of an existing username
+4. Click Login button","- User is unable to login
+- User is prompted with ""Invalid credentials"" message
+- User is prompted with ""Required"" message under username",7.jpg,,Completed
+8,QT-1,High,Login and access control,QT-1.2 ,Empty password field,"User account exists and is active
+","1. Navigate the login page
+2. Enter valid username
+3. Leave password field blank
+4. Click Login button","- User is unable to login
+- User is prompted with ""Invalid credentials"" message
+- User is prompted with ""Required"" message under password",8.jpg,,Completed
+9,QT-1,High,Login and access control,QT-1.2 ,Username and password fields blank,,"1. Navigate the login page
+2. Leave username field blank
+3. Leave password field blank
+4. Click Login button","- User is unable to login
+- User is prompted with ""Invalid credentials"" message
+- User is prompted with ""Required"" message under username and password fields",9.jpg,,Completed
+10,QT-1,High,Login and access control,QT-1.3 Test logout functionality,Succesful logout via logout button and user cannot access authenticated pages after logout,User is logged in and logs out via button,"1. Navigate user interface
+2. Click Logout button
+3. After being prompted to login page, attempt to navigate to a previously accessible using URL (dashboard/index)",User is redirected to Login page,10.jpg,,Completed
+11,QT-1,High,Login and access control,QT-1.3 ,Auto-logout on session timeout,Confirm system requirements on session timeout,"1. Log in
+2. Stay idle until session timeout
+2. Attempt any action (access item, reload page)",User is logged out automatically and redirected to login page upon action,11.jpg,,Completed
+12,QT-1,Medium,Login and access control,QT-1.3 ,Logout from multiple tabs,OrangeHRM app is open in multiple tabs,"1. Login 
+2. Open several tabs with authenticated pages
+3. Log out in one tab
+4. Refresh other tabs","- All tabs are logged out 
+- All tabs are redirected to login page ",12.2.jpg,,Completed
+13,QT-1,Medium,Login and access control,QT-1.3 ,Forced logout after password change,User changes password in another device/browser,"1. Log in on two devices (Device A and Device B)
+2. Change password on Device A
+2. Attempt to take any action on Device B",Device B is logged out and prompted to login page,,,Not started

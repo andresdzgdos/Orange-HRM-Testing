@@ -11,28 +11,23 @@ test ('OrangeHRM Create new employee', async({page}) => {
     await page.getByRole('link', { name: 'PIM' }).click();
     await expect (page).toHaveURL (/pim/)
     await page.getByRole('button', { name: ' Add' }).click();
-    
+
     //Generates a random combination of first and last name
     const Firstname = Math.random().toString(36).replace(/[^a-z]+/g, '').substring(2, 10);
     const Lastname = Math.random().toString(36).replace(/[^a-z]+/g, '').substring(2, 10);
-   
+    
     await page.getByRole('textbox', { name: 'First Name' }).fill(Firstname);
     await page.getByRole('textbox', { name: 'Last Name' }).fill(Lastname);
 
-    //Because of the high traffic nature of the environment, and because the PIM auto assigns one, an employee ID bucle serves the function of 
-    // verifying the availability of the ID. It will change ID+1 until an available ID is found
-
+    //Takes the employee ID assigned
+    const employeeID = await page.getByRole('textbox').nth(4).inputValue()
+    
     await page.getByRole('button', { name: 'Save' }).click();
     await expect (page).toHaveURL (/viewPersonalDetails/)
-    await page.getByRole('link', { name: 'PIM' }).click();
+
+    const heading = page.locator('h6.oxd-text.oxd-text--h6.--strong');
     
-    //At times, UI will have search box collapsed. This conditional opens the element in case it's closed
-    if (!page.getByRole('textbox', { name: 'Type for hints...' }).first().isVisible()){await page.getByRole('button').nth(3).click()}
-    await page.getByRole('textbox', { name: 'Type for hints...' }).first().fill(`${Firstname} ${Lastname}`);
-    await page.getByRole('button', { name: 'Search' }).click();
-    await expect(page.getByText(Firstname)).toBeVisible();
-    await expect(page.getByText(Lastname)).toBeVisible();
-    await page.getByRole('button').filter({ hasText: /^$/ }).nth(3).click();
-    await expect (page).toHaveURL (/viewPersonalDetails/)
-    await expect(page.locator('#app')).toContainText(`${Firstname} ${Lastname}`);
+    await expect (page.getByRole('textbox').nth(4)).toHaveValue(employeeID)
+    await expect(heading).toContainText(`${Firstname} ${Lastname}`);
+        
 })
